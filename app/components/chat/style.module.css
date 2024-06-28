@@ -1,6 +1,6 @@
 .answerIcon {
   position: relative;
-  background: url(./icons/robot.svg);
+  background: url(./icons/guru.png);
 }
 
 .typeingIcon {
@@ -19,7 +19,7 @@
 
 
 .questionIcon {
-  background: url(./icons/default-avatar.jpg);
+  background: url(./icons/architect.png);
   background-size: contain;
   border-radius: 50%;
 }
@@ -57,11 +57,11 @@
   padding-right: 90px;
   border-radius: 12px;
   line-height: 20px;
-  background-color: #fff;
+  background-color: #eee;
 }
 
 .textArea:hover {
-  background-color: #fff;
+  background-color: #ddd;
 }
 
 /* .textArea:focus {
