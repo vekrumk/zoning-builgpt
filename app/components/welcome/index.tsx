@@ -289,20 +289,20 @@ const Welcome: FC<IWelcomeProps> = ({
 
     return (
       <div
-        className='pt-[88px] mb-5'
+        className='mt-4 sm:mt-8 md:mt-12 lg:mt-16 mb-5'
       >
         {isPublicVersion ? renderHasSetInputsPublic() : renderHasSetInputsPrivate()}
       </div>)
   }
 
   return (
-    <div className='relative mobile:min-h-[48px] tablet:min-h-[64px]'>
+    <div className='relative min-h-screen flex flex-col'>
       {hasSetInputs && renderHeader()}
-      <div className='mx-auto pc:w-[794px] max-w-full mobile:w-full px-3.5'>
+      <div className='flex-grow mx-auto w-full max-w-[794px] px-3.5 py-4 sm:py-6 md:py-8 lg:py-12'>
         {/*  Has't set inputs  */}
         {
           !hasSetInputs && (
-            <div className='mobile:pt-[72px] tablet:pt-[128px] pc:pt-[200px]'>
+            <div className='mobile:py-4 sm:py-6 md:py-8 lg:py-12'>
               {hasVar
                 ? (
                   renderVarPanel()
