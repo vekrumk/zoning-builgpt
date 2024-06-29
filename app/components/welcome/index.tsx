@@ -10,7 +10,6 @@ import Toast from '@/app/components/base/toast'
 import Select from '@/app/components/base/select'
 import { DEFAULT_VALUE_MAX_LEN } from '@/config'
 
-// regex to match the {{}} and replace it with a span
 const regex = /\{\{([^}]+)\}\}/g
 
 export type IWelcomeProps = {
@@ -51,6 +50,7 @@ const Welcome: FC<IWelcomeProps> = ({
     }
     return res
   })())
+
   useEffect(() => {
     if (!savedInputs) {
       const res: Record<string, any> = {}
@@ -288,21 +288,20 @@ const Welcome: FC<IWelcomeProps> = ({
       return null
 
     return (
-      <div
-        className='mt-4 sm:mt-8 md:mt-12 lg:mt-16 mb-5'
-      >
+      <div className='pt-[88px] mb-5'>
         {isPublicVersion ? renderHasSetInputsPublic() : renderHasSetInputsPrivate()}
-      </div>)
+      </div>
+    )
   }
 
   return (
     <div className='relative min-h-screen flex flex-col'>
       {hasSetInputs && renderHeader()}
-      <div className='flex-grow mx-auto w-full max-w-[794px] px-3.5 py-4 sm:py-6 md:py-8 lg:py-12'>
+      <div className='flex-grow mx-auto w-full max-w-[794px] px-3.5 py-4 sm:py-6 md:py-8'>
         {/*  Has't set inputs  */}
         {
           !hasSetInputs && (
-            <div className='mobile:py-4 sm:py-6 md:py-8 lg:py-12'>
+            <div className='pt-4 sm:pt-8 md:pt-12 lg:pt-16'>
               {hasVar
                 ? (
                   renderVarPanel()
@@ -320,7 +319,6 @@ const Welcome: FC<IWelcomeProps> = ({
         {/* foot */}
         {!hasSetInputs && (
           <div className='mt-4 flex justify-between items-center h-8 text-xs text-gray-400'>
-
             {siteInfo.privacy_policy
               ? <div>{t('app.chat.privacyPolicyLeft')}
                 <a
@@ -331,14 +329,10 @@ const Welcome: FC<IWelcomeProps> = ({
               </div>
               : <div>
               </div>}
-            {/* <a className='flex items-center pr-3 space-x-3' href="https://dify.ai/" target="_blank">
-              <span className='uppercase'>{t('app.chat.powerBy')}</span>
-              <FootLogo />
-            </a> */}
           </div>
         )}
       </div>
-    </div >
+    </div>
   )
 }
 
